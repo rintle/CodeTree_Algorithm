@@ -64,7 +64,14 @@ N = int(input())
 nums = list(map(int, input().split()))
 ans = 0
 sorted_nums = sorted(nums)
-while nums != sorted_nums:
+
+def check():
+    for i in range(1, N):
+        if nums[i-1]+1 != nums[i]:
+            return False
+    return True
+
+while True:
     first = nums[0]
     found = 101
     found_idx = 0
@@ -77,9 +84,12 @@ while nums != sorted_nums:
                 break
     if found == 101:
         found_idx = N
+
     for idx in range(1, found_idx):
         nums[idx-1] = nums[idx]
+
     nums[found_idx-1] = first
-    
     ans += 1
+    if check():
+        break
 print(ans)
