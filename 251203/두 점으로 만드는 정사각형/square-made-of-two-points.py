@@ -1,0 +1,8 @@
+s1 = list(map(int, input().split()))
+s2 = list(map(int, input().split()))
+x1 = min(s1[0], s2[0])
+y1 = min(s1[1], s2[1])
+x2 = max(s1[2], s2[2])
+y2 = max(s1[3], s2[3])
+row = max((x2-x1),(y2-y1))
+print(row*row)
