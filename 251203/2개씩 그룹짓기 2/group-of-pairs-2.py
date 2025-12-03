@@ -5,7 +5,7 @@ nums.sort()
 
 small = nums[:N]
 large = nums[N:]
-max_min = 100000001
+max_min = 1000000001
 for i in range(N):
     max_min = min(max_min, large[i]-small[i])
 print(max_min)
